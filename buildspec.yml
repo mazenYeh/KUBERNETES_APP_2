@@ -11,7 +11,7 @@ phases:
       - export PATH=$PWD/:$PATH
       - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
       - apt-get install jq
-      - apt-get install python3
+      - apt-get install python3.5
       - apt-get install python3-pip
       - apt-get install python3-dev
   pre_build:
