@@ -11,9 +11,11 @@ phases:
       - export PATH=$PWD/:$PATH
       - apt-get update
       - apt-get install -y python3.5
-      - apt-get install -y python3.5-pip
-      - apt-get install -y python3.5-dev
-      - apt-get update && apt-get -y install jq python3.5-pip python3.5-dev && pip3 install --upgrade awscli
+      - apt-get install -y jq
+      - apt-get install -y python-pip
+      - apt-get install -y python-dev
+      - pip3 install --upgrade awscli
+      # - apt-get update && apt-get -y install jq python3.5-pip python3.5-dev && pip3 install --upgrade awscli
       - python3 --version
   pre_build:
     commands:
