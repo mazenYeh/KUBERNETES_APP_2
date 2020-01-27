@@ -10,7 +10,7 @@ phases:
       - chmod +x ./kubectl ./aws-iam-authenticator
       - export PATH=$PWD/:$PATH
       - apt-get update
-      - apt-get install -y python3.7
+      - apt-get install -y python3.5
       - apt-get install -y jq
       - apt-get install -y python3-pip
       - apt-get install -y python3-dev
