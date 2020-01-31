@@ -12,7 +12,7 @@ phases:
       - export PATH=$PWD/:$PATH
       - sudo add-apt-repository ppa:deadsnakes/ppa
       - sudo apt update
-      - sudo apt install python3.6
+      - sudo apt -y install python3.5
       - apt-get -y install jq
       # - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
       - python --version
