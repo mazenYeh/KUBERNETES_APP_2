@@ -12,9 +12,13 @@ phases:
       - apt-get update
       - apt-get remove -y python
       - apt-get remove -y python3
-      - apt-get install -y python3.5
-      - apt-get install -y jq
+      - apt-get install -y python3
       - apt-get install -y python3-pip
+      - python3 -m pip install --user virtualenv
+      - python3 -m venv env
+      - source env/bin/activate
+      - which python
+      - apt-get install -y jq
       - apt-get install -y python3-dev
       - pip3 install --upgrade awscli
       # - apt-get update && apt-get -y install jq python3.5-pip python3.5-dev && pip3 install --upgrade awscli
