@@ -10,20 +10,29 @@ phases:
       - curl -sS -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/kubectl
       - chmod +x ./kubectl ./aws-iam-authenticator
       - export PATH=$PWD/:$PATH
-      - apt-get -y remove
-      - sudo add-apt-repository ppa:deadsnakes/ppa
-      - sudo apt update
 
-      - sudo apt -y install python3.5
-      - apt-get -y install jq
-      - apt-get -y install python3-pip
-      - apt-get -y install python3-dev
-      - pip3 install --upgrade awscli
-      # - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
-      - python --version
+      - yum install gcc openssl-devel bzip2-devel libffi-devel
+      - cd /opt
+      - sudo wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
+      - sudo tar xzf Python-3.7.4.tgz
+      - cd Python-3.7.4
+      - sudo ./configure --enable-optimizations
+      - sudo make altinstall
+
       - python3 --version
-      - python3.5 --version
-      - pip3 install --upgrade numpy
+
+      # - sudo add-apt-repository ppa:deadsnakes/ppa
+      # - sudo apt update
+      # - sudo apt -y install python3.5
+      # - apt-get -y install jq
+      # - apt-get -y install python3-pip
+      # - apt-get -y install python3-dev
+      # - pip3 install --upgrade awscli
+      # # - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
+      # - python --version
+      # - python3 --version
+      # - python3.5 --version
+      # - pip3 install --upgrade numpy
   pre_build:
     commands:
       - TAG="$REPOSITORY_NAME.$REPOSITORY_BRANCH.$ENVIRONMENT_NAME.$(date +%Y-%m-%d.%H.%M.%S).$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
