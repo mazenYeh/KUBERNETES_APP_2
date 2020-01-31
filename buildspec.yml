@@ -10,15 +10,6 @@ phases:
       - curl -sS -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/kubectl
       - chmod +x ./kubectl ./aws-iam-authenticator
       - export PATH=$PWD/:$PATH
-
-      - yum install gcc openssl-devel bzip2-devel libffi-devel
-      - cd /opt
-      - sudo wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
-      - sudo tar xzf Python-3.7.4.tgz
-      - cd Python-3.7.4
-      - sudo ./configure --enable-optimizations
-      - sudo make altinstall
-
       - python3 --version
 
       # - sudo add-apt-repository ppa:deadsnakes/ppa
