@@ -9,6 +9,7 @@ phases:
       - curl -sS -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/kubectl
       - chmod +x ./kubectl ./aws-iam-authenticator
       - export PATH=$PWD/:$PATH
+      - sudo apt-get -y remove --auto-remove python3.4
       - python3 --version
 
       # - sudo add-apt-repository ppa:deadsnakes/ppa
