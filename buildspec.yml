@@ -18,17 +18,9 @@ phases:
       - sudo ./configure --enable-optimizations
       - sudo make install
       - cd $PATHXYZ
-      - python3 --version
-      - python3.5 --version
-      # - sudo apt update
-      # - apt-get -y install jq
-      # - apt-get -y install python3-pip
-      # - apt-get -y install python3-dev
-      # - pip3 install --upgrade awscli
       - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
       - python --version
       - python3 --version
-      # - pip3 install --upgrade numpy
   pre_build:
     commands:
       - TAG="$REPOSITORY_NAME.$REPOSITORY_BRANCH.$ENVIRONMENT_NAME.$(date +%Y-%m-%d.%H.%M.%S).$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
