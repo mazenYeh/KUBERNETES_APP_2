@@ -10,7 +10,7 @@ phases:
       - chmod +x ./kubectl ./aws-iam-authenticator
       - export PATH=$PWD/:$PATH
       - python3 --version
-      - PATHXYZ=pwd
+      - PATHXYZ=$(pwd)
       - cd /usr/src
       - wget https://www.python.org/ftp/python/3.5.6/Python-3.5.6.tgz
       - sudo tar xzf Python-3.5.6.tgz
