@@ -19,7 +19,7 @@ phases:
       # - apt-get -y install python3-pip
       # - apt-get -y install python3-dev
       # - pip3 install --upgrade awscli
-      # # - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
+      # - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
       # - python --version
       # - python3 --version
       # - python3.5 --version
